@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-/*import {
+import {
   Row,
   Col,
   ListGroup,
@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
   Form,
   Button,
   Card,
-} from "react-bootstrap";*/
+} from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { useGetOrderDetailsQuery } from "../slices/ordersApiSlice";
