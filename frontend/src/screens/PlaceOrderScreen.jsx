@@ -48,7 +48,7 @@ const PlaceOrderScreen = () => {
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
-          <ListGroup variant="flush">
+          <ListGroup variant="flush" className="pl-odr">
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
@@ -72,7 +72,7 @@ const PlaceOrderScreen = () => {
               ) : (
                 <ListGroup variant="flush">
                   {cart.cartItems.map((item, index) => (
-                    <ListGroup.Item key={index}>
+                    <ListGroup.Item key={index} className="pl-odr-desc">
                       <Row>
                         <Col md={1}>
                           <Image
@@ -83,7 +83,10 @@ const PlaceOrderScreen = () => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link
+                            to={`/product/${item.product}`}
+                            className="cart-desc"
+                          >
                             {item.name}
                           </Link>
                         </Col>
@@ -100,7 +103,7 @@ const PlaceOrderScreen = () => {
           </ListGroup>
         </Col>
         <Col md={4}>
-          <Card>
+          <Card className="pl-sum">
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <h2>Order Summary</h2>

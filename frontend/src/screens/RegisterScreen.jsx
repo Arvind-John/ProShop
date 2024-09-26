@@ -29,7 +29,7 @@ const RegisterScreen = () => {
     if (userInfo) {
       navigate(redirect);
     }
-  }, [userInfo, redirect, navigate]);
+  }, [navigate, userInfo, redirect]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -51,43 +51,47 @@ const RegisterScreen = () => {
       <h1>Sign Up</h1>
 
       <Form onSubmit={submitHandler}>
-        <Form.Group controlId="name" className="my-3">
+        <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="email" className="my-3">
+        <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="password" className="my-3">
+        <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="confirmPassword" className="my-3">
+        <Form.Group controlId="confirmPassword">
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
@@ -106,7 +110,10 @@ const RegisterScreen = () => {
       <Row className="py-3">
         <Col>
           Already have an account?
-          <Link to={redirect ? `login?redirect=${redirect}` : "/login"}>
+          <Link
+            to={redirect ? `/login?redirect=${redirect}` : "/login"}
+            className="reg-dl"
+          >
             Login
           </Link>
         </Col>

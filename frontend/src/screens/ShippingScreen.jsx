@@ -30,45 +30,49 @@ const ShippingScreen = () => {
     <FormContainer>
       <CheckoutSteps step1 step2 />
 
-      <h1>Shipping</h1>
+      <h2>Shipping</h2>
       <Form onSubmit={submitHandler}>
-        <Form.Group controlId="address" className="my-2">
+        <Form.Group controlId="address" className="frm-edt">
           <Form.Label>Address</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="city" className="my-2">
+        <Form.Group controlId="city" className="frm-edt">
           <Form.Label>City</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter City"
             value={city}
             onChange={(e) => setCity(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="postalCode" className="my-2">
+        <Form.Group controlId="postalCode" className="frm-edt">
           <Form.Label>Postal Code</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Postal Code"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="country" className="my-2">
+        <Form.Group controlId="country" className="frm-edt">
           <Form.Label>Country</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
+            className="form-container"
           ></Form.Control>
         </Form.Group>
 

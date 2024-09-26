@@ -35,13 +35,16 @@ const CartScreen = () => {
   return (
     <Row>
       <Col md={8}>
-        <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1>
+        <h2 style={{ marginBottom: "20px" }}>Shopping Cart</h2>
         {cartItems.length === 0 ? (
           <Message>
-            Your cart is empty <Link to="/">Go Back</Link>
+            Your cart is empty{" "}
+            <Link to="/" className="reg-dl">
+              Go Back
+            </Link>
           </Message>
         ) : (
-          <ListGroup variant="flush">
+          <ListGroup variant="flush" className="cart-card">
             {cartItems.map((item) => (
               <ListGroup.Item key={item._id}>
                 <Row>
@@ -49,7 +52,9 @@ const CartScreen = () => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item._id}`}>{item.name}</Link>
+                    <Link to={`/product/${item._id}`} className="cart-desc">
+                      {item.name}
+                    </Link>
                   </Col>
                   <Col md={2}>₹{item.price}</Col>
                   <Col md={2}>
@@ -84,7 +89,7 @@ const CartScreen = () => {
       </Col>
       <Col md={4}>
         <Card>
-          <ListGroup variant="flush">
+          <ListGroup variant="flush" className="cart-sub">
             <ListGroup.Item>
               <h2>
                 Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}

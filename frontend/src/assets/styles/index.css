@@ -1,5 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 main {
   min-height: 80vh;
+}
+
+body {
+  background-color: #e5e7e9;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  color: rgb(68, 52, 82);
+}
+
+.header-text {
+  font-style: normal;
+  font-weight: 600;
+  color: #fdebd0;
 }
 
 .rating span {
@@ -7,7 +29,7 @@ main {
 }
 
 .rating svg {
-  color: #f8e825;
+  color: #f9e79f;
 }
 
 .rating-text {
@@ -17,10 +39,187 @@ main {
 }
 
 .product-title {
+  color: #212f3c;
   height: 2.5em; /* Set a fixed height */
   overflow: hidden; /* Hide overflow content */
   text-overflow: ellipsis; /* Add ellipsis for long text */
   white-space: nowrap; /* Prevent wrapping */
+}
+
+.wrap-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contain {
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  width: 270px;
+  height: 440px;
+  margin: 30px;
+  box-shadow: 0 4px 8px #212f3c;
+  background-color: #85929e;
+}
+
+.product-card {
+  flex-wrap: wrap;
+  display: flex;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #85929e;
+  box-shadow: 0 4px 8px #212f3c;
+}
+
+.product-desc {
+  border-radius: 9px;
+  overflow: hidden;
+  background-color: #212f3c;
+  box-shadow: 0 4px 8px #979a9a;
+}
+
+.prod-details {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #212f3c;
+  font-weight: 500;
+}
+
+.product-review {
+  border-radius: 9px;
+  box-shadow: 0 4px 8px #979a9a;
+}
+
+.btn {
+  background-color: #212f3c;
+  color: #fdfefe;
+  border: none;
+  margin: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #34495e;
+}
+
+.cart-card {
+  margin: 10px;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px #979a9a;
+}
+
+.cart-desc {
+  color: #34495e;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.cart-sub {
+  font-weight: 600;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px #979a9a;
+}
+
+.check-comp {
+  color: #34495e;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.frm-edt {
+  font-style: normal;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #212f3c;
+  margin: 10px;
+}
+
+.pl-odr {
+  color: #34495e;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin: 10px;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px #979a9a;
+}
+
+.pl-sum {
+  color: #34495e;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin: 10px;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px #979a9a;
+}
+
+.pl-odr-itm {
+  color: #34495e;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.pl-odr-desc {
+  color: #34495e;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.form-container {
+  display: flex;
+  border: 2px solid #a6acaf;
+  border-radius: 8px;
+}
+
+.reg-dl {
+  color: #212f3c;
+}
+
+.srch-dl {
+  display: flex;
+  height: 35px;
+  margin: 20px;
+  margin-right: 5px;
+}
+
+.srch-btn {
+  background-color: #85c1e9;
+  color: #1b2631;
+  border: none;
+  margin: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.hd-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.pgn {
+  background-color: #34495e;
+  color: #fdfefe;
+}
+
+.car-dis {
+  background-color: #85929e;
+}
+
+.car-text {
+  color: #fdfefe;
+}
+
+.prod-des {
+  color: #212f3c;
+  font-weight: 500;
 }
 
 table td,

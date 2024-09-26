@@ -6,6 +6,9 @@ import logo from "../assets/logo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
+import SearchBox from "./SearchBox";
+import { resetCart } from "../slices/cartSlice";
+
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
@@ -19,6 +22,7 @@ const Header = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(resetCart());
       navigate("/login");
     } catch (err) {
       console.log(err);
@@ -30,16 +34,17 @@ const Header = () => {
       <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>
+            <Navbar.Brand className="header-text">
               <img src={logo} alt="Shop++" />
-              ProShop
+              Shop++
             </Navbar.Brand>
           </LinkContainer>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <LinkContainer to="/cart">
+              <SearchBox />
+              <LinkContainer to="/cart" className="hd-nav">
                 <Nav.Link>
                   <FaShoppingCart />
                   Cart
@@ -51,7 +56,11 @@ const Header = () => {
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
-                <NavDropdown title={userInfo.name} id="username">
+                <NavDropdown
+                  title={userInfo.name}
+                  id="username"
+                  className="hd-nav"
+                >
                   <LinkContainer to="profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
@@ -60,7 +69,7 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <LinkContainer to="/login">
+                <LinkContainer to="/login" className="hd-nav">
                   <Nav.Link href="/login">
                     <FaUser />
                     Sign In

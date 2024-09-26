@@ -5,7 +5,6 @@ import User from "../models/userModel.js";
 const protect = asyncHandler(async (req, res, next) => {
   let token;
 
-  //Read the JWT from token
   token = req.cookies.jwt;
 
   if (token) {
@@ -24,7 +23,6 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-//Admin middleware
 const admin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next();
